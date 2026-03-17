@@ -9,6 +9,8 @@ export interface Category {
     description: string;
     productCount: number;
     image: string;
+    color?: string;
+    icon?: string;
 }
 
 export interface Product {
