@@ -1,9 +1,6 @@
 import { Outfit, Inter } from 'next/font/google';
 import './globals.css';
 import { Toaster } from 'react-hot-toast';
-import Navbar from '@/components/Navbar';
-import Footer from '@/components/Footer';
-import AnnouncementBar from '@/components/AnnouncementBar';
 import { Metadata } from 'next';
 import { ReactNode } from 'react';
 
@@ -21,10 +18,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
         <html lang="en" className={`${outfit.variable} ${inter.variable}`}>
             <body className="font-inter bg-surface antialiased">
                 <Toaster position="top-right" toastOptions={{ duration: 3000 }} />
-                <AnnouncementBar />
-                <Navbar />
-                <main>{children}</main>
-                <Footer />
+                {children}
             </body>
         </html>
     );
