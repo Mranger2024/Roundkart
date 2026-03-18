@@ -20,7 +20,7 @@ export default function Navbar() {
     return (
         <>
             {/* ── TOP UTILITY STRIP (Hidden on smallest mobile) ────────── */}
-            <div className="bg-[#0f1111] text-white text-[10px] sm:text-[11px] py-1.5 px-4 hidden sm:block">
+            <div className="bg-[#0f1111] text-white text-[10px] sm:text-[11px] py-1.5 px-4 hidden sm:block elementor-hidden-mobile">
                 <div className="max-w-7xl mx-auto flex justify-between items-center">
                     <div className="flex gap-4">
                         <span className="text-gray-400 hidden lg:inline">RoundKart — Home Appliances &amp; Kitchen Equipment</span>
@@ -43,7 +43,7 @@ export default function Navbar() {
                     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-2 md:py-2.5 flex items-center justify-between gap-2 sm:gap-4">
 
                         {/* Mobile Menu Toggle (Leftmost on mobile) */}
-                        <button onClick={() => setMobileOpen(!mobileOpen)} className="md:hidden p-1.5 text-gray-300 hover:text-white mr-1 -ml-1">
+                        <button onClick={() => setMobileOpen(!mobileOpen)} className="md:hidden elementor-hidden-desktop p-1.5 text-gray-300 hover:text-white mr-1 -ml-1">
                             <Menu size={22} />
                         </button>
 
@@ -52,14 +52,14 @@ export default function Navbar() {
                             <div className="w-8 h-8 md:w-11 md:h-11 bg-white rounded-md md:rounded-lg flex items-center justify-center shadow-inner group-hover:scale-105 transition-transform duration-200">
                                 <span className="text-[#132137] font-black text-lg md:text-2xl leading-none">R</span>
                             </div>
-                            <div className="hidden sm:block">
+                            <div className="hidden sm:block elementor-hidden-mobile">
                                 <p className="font-black text-white text-base md:text-xl uppercase tracking-tighter leading-none">RoundKart</p>
                                 <p className="text-[8px] md:text-[10px] text-brand-400 font-bold uppercase tracking-[0.2em] leading-none mt-1 group-hover:text-white transition-colors">Home Appliances &amp; Kitchen</p>
                             </div>
                         </Link>
 
                         {/* ── INTEGRATED CATEGORY SEARCH (DESKTOP) ─────────────── */}
-                        <div className="hidden md:flex flex-1 max-w-2xl mx-4 relative group">
+                        <div className="hidden md:flex elementor-hidden-mobile elementor-hidden-tablet flex-1 max-w-2xl mx-4 relative group">
                             <div className="flex w-full bg-white rounded-md overflow-hidden shadow-sm focus-within:ring-2 focus-within:ring-brand-500 transition-all">
                                 <div className="relative flex-shrink-0">
                                     <select
@@ -89,7 +89,7 @@ export default function Navbar() {
                         <div className="flex items-center gap-3 sm:gap-5 lg:gap-8 flex-shrink-0">
 
                             {/* Account - Desktop Only */}
-                            <button className="hidden sm:flex flex-col text-left group">
+                            <button className="hidden sm:flex elementor-hidden-mobile flex-col text-left group">
                                 <span className="text-[10px] text-gray-400 font-bold leading-tight uppercase opacity-80 group-hover:text-white transition-opacity">Hello, Sign In</span>
                                 <span className="text-sm font-bold text-white flex items-center gap-1 group-hover:text-brand-400">
                                     Account <ChevronDown size={14} />
@@ -109,15 +109,15 @@ export default function Navbar() {
                             {/* Cart Component */}
                             <button onClick={() => setCartOpen(true)} className="flex items-center gap-2 md:gap-3 group relative px-1 py-1">
                                 <div className="relative">
-                                    <ShoppingCart size={24} strokeWidth={1.5} className="text-gray-300 group-hover:text-brand-400 md:hidden" />
-                                    <ShoppingCart size={28} strokeWidth={1.5} className="text-gray-300 group-hover:text-brand-400 hidden md:block" />
+                                    <ShoppingCart size={24} strokeWidth={1.5} className="text-gray-300 group-hover:text-brand-400 md:hidden elementor-hidden-desktop" />
+                                    <ShoppingCart size={28} strokeWidth={1.5} className="text-gray-300 group-hover:text-brand-400 hidden md:block elementor-hidden-mobile" />
                                     {totalItems > 0 && (
                                         <span className="absolute -top-1 -right-1 w-4 h-4 md:w-5 md:h-5 bg-[#fb641b] text-white text-[9px] md:text-[10px] font-black rounded-full flex items-center justify-center border-2 border-[#232f3e]">
                                             {totalItems}
                                         </span>
                                     )}
                                 </div>
-                                <div className="hidden lg:flex flex-col text-left">
+                                <div className="hidden lg:flex elementor-hidden-mobile elementor-hidden-tablet flex-col text-left">
                                     <span className="text-[10px] text-gray-400 font-bold uppercase leading-tight opacity-80">My Shopping</span>
                                     <span className="text-sm font-black text-white group-hover:text-brand-400">Checkout</span>
                                 </div>
@@ -126,7 +126,7 @@ export default function Navbar() {
                     </div>
 
                     {/* ── MOBILE SEARCH BAR (Prominent on small screens) ────────── */}
-                    <div className="md:hidden px-3 pb-2.5">
+                    <div className="md:hidden elementor-hidden-desktop px-3 pb-2.5">
                         <div className="flex w-full bg-white rounded-md overflow-hidden shadow-lg border border-gray-700/50 h-10">
                             <input
                                 type="text"
@@ -148,8 +148,8 @@ export default function Navbar() {
                         <div className="flex-shrink-0 pr-2 border-r border-slate-100 md:border-none mr-2 md:mr-0">
                             <Link href="/shop" className="flex items-center gap-1.5 text-gray-700 hover:text-brand-500 font-bold text-[11px] md:text-[12px] uppercase tracking-wide group transition-colors">
                                 <Menu size={14} className="text-brand-500 group-hover:scale-110 transition-transform" />
-                                <span className="hidden lg:inline">All Categories</span>
-                                <span className="lg:hidden text-[10px]">Shop</span>
+                                <span className="hidden lg:inline elementor-hidden-mobile elementor-hidden-tablet">All Categories</span>
+                                <span className="lg:hidden elementor-hidden-desktop text-[10px]">Shop</span>
                             </Link>
                         </div>
 
@@ -194,8 +194,8 @@ export default function Navbar() {
                         <div className="flex-shrink-0 pl-2 border-l border-slate-100 md:border-none ml-2 md:mr-0">
                             <Link href="/contact" className="text-[10px] md:text-[12px] font-black text-brand-600 flex items-center gap-1 md:gap-1.5 hover:underline decoration-2 underline-offset-4 uppercase tracking-tighter bg-brand-50/50 px-2 py-1 rounded-sm">
                                 <Building2 size={13} className="md:scale-110" /> 
-                                <span className="hidden sm:inline">Business Hub</span>
-                                <span className="sm:hidden tracking-normal">B2B</span>
+                                <span className="hidden sm:inline elementor-hidden-mobile">Business Hub</span>
+                                <span className="sm:hidden elementor-hidden-desktop elementor-hidden-tablet tracking-normal">B2B</span>
                             </Link>
                         </div>
                     </div>
